@@ -1,0 +1,446 @@
+@use "../abstracts" as *;
+
+%inputField {
+  height: 2.7rem;
+  padding-left: 0.25rem;
+  border-radius: 0.5rem;
+  font-size: 1rem !important;
+  border: 2px solid transparent;
+  outline: none;
+  color: clr(neutral, 2) !important;
+  background-color: clr(neutral, 8) !important;
+  transition: 0.3px all ease;
+  &:focus {
+    border-color: clr(primary, 1) !important;
+  }
+}
+
+%button1 {
+  padding: 0.5rem;
+  outline: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  background-color: clr(primary, 1);
+  color: clr(primary, 4);
+  margin: 0.7rem auto;
+  transition: 0.3s all ease;
+}
+
+%active {
+  background-color: clr(primary, 2) !important;
+  color: clr(primary, 3) !important;
+}
+
+%passed {
+  background-color: #56b572;
+  color: #fff;
+}
+
+//style that would be used over again
+.generalContainer {
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 3rem;
+  background-color: clr(neutral, 9);
+  //removing autofill style
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px clr(neutral, 8) inset !important;
+    -webkit-text-fill-color: clr(neutral, 2) !important;
+    font-size: inherit;
+  }
+  //for the error modal
+  .topError {
+    width: 95%;
+    height: 3rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 350px;
+    background-color: #e51130;
+    font-weight: 500;
+    margin: auto;
+    transform: translateY(-100px);
+    border: 2px solid #fb3560;
+    font-size: 1.02rem;
+    p {
+      text-align: center;
+    }
+    .icon {
+      font-size: 1.3rem;
+      border-radius: 10px;
+      background-color: #820d1f;
+      cursor: pointer;
+    }
+
+    &[aria-disabled="true"] {
+      transform: translateY(-20px);
+    }
+  }
+
+  .container {
+    background-color: clr(neutral, 7);
+    padding: 1rem;
+    width: 66%;
+    max-width: 29rem;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: 0.3s all ease;
+    margin: auto;
+    .logo {
+      width: fit-content;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    h1 {
+      margin: 0.5rem auto;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      color: clr(neutral, 1);
+
+      @media (min-width: 768px) {
+        font-size: 1.7rem;
+        line-height: 2rem;
+      }
+    }
+    .info {
+      margin-top: 0.1rem;
+      font-weight: 400;
+      font-size: 1.2rem;
+      text-align: center;
+      width: 100%;
+      margin: 0.5rem auto;
+      text-align: center;
+      color: clr(primary, 2);
+    }
+
+    form,
+    .formField {
+      padding: 0.25rem;
+      margin-top: 0.5rem;
+      width: 100%;
+
+      .field {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 0.75rem;
+        color: clr(neutral, 3);
+
+        & > label {
+          margin-top: 0.6rem;
+          margin-bottom: 0.45rem;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+          font-weight: 400;
+          color: clr(neutral, 2);
+        }
+
+        & > p {
+          margin: 0 0 4px 0;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #db2754;
+        }
+        & > input,
+        & > select {
+          @extend %inputField;
+
+          &::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
+        }
+      }
+
+      .passwordField {
+        @extend .field;
+
+        .innercontainer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+
+          & > label {
+            margin-top: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+            color: clr(neutral, 3);
+          }
+
+          & > p {
+            margin: 0 0 4px 0;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            color: #db2754;
+          }
+
+          .icon {
+            cursor: pointer;
+            color: clr(neutral, 3);
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .double {
+        display: flex;
+        justify-content: space-between;
+        .field {
+          width: 48%;
+        }
+        @media screen and (max-width: 489px) {
+          display: block;
+          .field {
+            width: 100%;
+          }
+        }
+      }
+
+      .text {
+        font-weight: 500;
+        text-align: center;
+        color: clr(neutral, 2);
+      }
+      .highlight {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+
+        color: clr(primary, 2);
+      }
+    }
+
+    @media screen and(max-width:700px) {
+      width: 80%;
+    }
+    @media screen and(max-width:489px) {
+      width: 96%;
+      padding: 0.45rem;
+    }
+  }
+}
+
+//login
+.loginPage {
+  @extend .generalContainer;
+}
+//signup
+.signupPage {
+  @extend .generalContainer;
+  width: auto;
+
+  .container {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+    color: clr(neutral, 3);
+  }
+}
+//login
+.resetPasswordPage,
+.resetPasswordPageMain {
+  @extend .generalContainer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .highlight {
+    margin-left: 6px;
+  }
+  .highlight2 {
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    color: clr(primary, 2);
+    margin-left: 6px;
+  }
+}
+
+//verify
+.verifyPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 3rem;
+  background-color: clr(neutral, 9);
+
+  .container {
+    border-spacing: 0.25rem;
+    border-radius: 10px;
+    padding: 0.75rem 0.5rem;
+    width: 75%;
+    max-width: 28rem;
+    height: fit-content;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background-color: clr(neutral, 7);
+    padding: 1rem;
+
+    h1 {
+      margin: 0.5rem auto;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      color: clr(neutral, 1);
+
+      @media (min-width: 768px) {
+        font-size: 1.7rem;
+        line-height: 2rem;
+      }
+    }
+    p {
+      margin-top: 0.1rem;
+      font-weight: 400;
+      text-align: center;
+      width: 100%;
+      color: clr(neutral, 3);
+    }
+
+    form {
+      width: 100%;
+      padding: 0.25rem;
+      margin-top: 0.5rem;
+
+      //for the input section
+      & > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0.5rem auto;
+        color: clr(neutral, 3);
+
+        & > label {
+          margin-top: 0.6rem;
+          margin-bottom: 0.45rem;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+          font-weight: 500;
+          color: clr(neutral, 2);
+        }
+
+        & > p {
+          margin: 0 0 4px 0;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #db2754;
+        }
+
+        & > input {
+          @extend %inputField;
+          width: 100%;
+          font-size: 1.6rem;
+          color: clr(neutral, 0);
+          letter-spacing: 10px;
+          text-align: center;
+        }
+      }
+      .text {
+        font-weight: 500;
+        text-align: center;
+        color: clr(neutral, 3);
+
+        margin-top: 0.75rem;
+      }
+      .loading {
+        font-weight: 500;
+        text-align: center;
+        color: clr(primary, 1);
+      }
+      .or {
+        font-weight: 100;
+        cursor: pointer;
+        text-align: center;
+        color: #94a3b8;
+        margin: 0;
+      }
+
+      .sent {
+        text-align: center;
+        font-weight: 500;
+      }
+      .request {
+        font-weight: 500;
+        text-align: center;
+        color: clr(primary, 1);
+        cursor: pointer;
+        margin-top: 0.25rem;
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.9;
+        }
+      }
+    }
+    @media screen and (max-width: 639px) {
+      width: 98%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0.5rem;
+  }
+}
+
+.error {
+  border-color: #db2754 !important;
+  color: #db2754 !important;
+}
+
+.Btn_normal {
+  @extend %button1;
+}
+.Btn_Active {
+  @extend %active;
+}
+.Btn_Passed {
+  @extend %passed;
+}
+.Btn_Disabled {
+  opacity: 50%;
+}
+.Btn_Back {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #ffffff1b;
+  color: #fff;
+}
