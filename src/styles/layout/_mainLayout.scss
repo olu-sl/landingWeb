@@ -9,7 +9,7 @@
   overflow: hidden auto;
   width: 100%;
   @include components.navbar();
-  // @include components.BottomNav();
+  @include components.Footer();
 
   .pages {
     @include pages.homePage();

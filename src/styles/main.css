@@ -603,6 +603,14 @@ body {
   border-radius: 50%;
 }
 
+.Dot {
+  width: 3px;
+  height: 3px;
+  background-color: unset;
+  color: unset;
+  border-radius: 50%;
+}
+
 .Layout {
   background-color: transparent;
   overscroll-behavior: contain;
@@ -763,6 +771,42 @@ body {
   font-size: 1rem;
   font-weight: 500;
   transition: 0.3s all ease;
+}
+.Layout footer {
+  width: 100%;
+  background-color: hsl(227deg, 51%, 22%);
+  padding: 0 10px;
+}
+.Layout footer .bottom {
+  width: 100%;
+  margin: auto;
+  background-color: transparent;
+  display: flex;
+  max-width: 1600px;
+  justify-content: space-between;
+}
+.Layout footer .bottom .socials {
+  display: flex;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 2rem;
+  column-gap: 0.8rem;
+  align-items: center;
+}
+.Layout footer .bottom .socials .icon {
+  transition: 0.2s all ease;
+  cursor: pointer;
+}
+.Layout footer .bottom .socials .icon:hover {
+  color: hsla(0deg, 0%, 100%, 0.8);
+}
+.Layout footer .bottom .misc {
+  display: flex;
+  column-gap: 0.3rem;
+  color: hsla(0deg, 0%, 100%, 0.6);
+  align-items: center;
+}
+.Layout footer .bottom .misc .Dot {
+  background-color: hsla(0deg, 0%, 100%, 0.6);
 }
 .Layout .pages .homePage header {
   width: 100%;

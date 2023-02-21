@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+@use "./button";
+@mixin Footer() {
+  footer {
+    width: 100%;
+    background-color: clr(db, 1);
+    padding: 0 10px;
+    .bottom {
+      width: 100%;
+      margin: auto;
+      background-color: transparent;
+      display: flex;
+      max-width: 1600px;
+      justify-content: space-between;
+      .socials {
+        display: flex;
+        color: clr(light, 3);
+        font-size: 2rem;
+        column-gap: 0.8rem;
+        align-items: center;
+        .icon {
+          transition: 0.2s all ease;
+          cursor: pointer;
+          &:hover {
+            color: clr(light, 2);
+          }
+        }
+      }
+      .misc {
+        display: flex;
+        column-gap: 0.3rem;
+        color: clr(light, 1);
+        align-items: center;
+        .Dot {
+          background-color: clr(light, 1);
+        }
+      }
+    }
+  }
+}
