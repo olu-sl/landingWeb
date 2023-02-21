@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+@mixin specialButton() {
+            appearance: button;
+            background-image: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            margin: 0 5px 10px 0;
+            overflow: visible;
+            padding: 9px 30px;
+            text-align: center;
+            text-transform: none;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            vertical-align: middle;
+            white-space: nowrap;
+            transition: 0.3s all ease;
+
+            &:hover,
+            &:focus {
+              text-decoration: none;
+            }
+
+            &:active {
+              box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+              outline: 0;
+            }
+
+            &:not([disabled]):active {
+              transform: translate(-2px, 2px);
+            }
+}
+@mixin specialButtonType1(){
+    box-shadow: clr(light,3) -4.5px 4.5px 0 0, clr(db,1) -4.5px 4.5px 0 1px;
+
+    &:hover {
+      text-decoration: none;
+      box-shadow: clr(light,3) -2.5px 2.5px 0 0, clr(db,1) -2.5px 2.5px 0 1px;
+    }
+
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    }
+
+    &:not([disabled]):active {
+      box-shadow: clr(light,3) 0px 0px 0 0, clr(db,1) 0px 0px 0 1px;
+    }
+}
+@mixin specialButtonType2(){
+    box-shadow: clr(accent,1) -4.5px 4.5px 0 0, clr(db,1) -4.5px 4.5px 0 1px;
+    
+    &:hover {
+      text-decoration: none;
+      box-shadow: clr(accent,1) -2.5px 2.5px 0 0, clr(db,1) -2.5px 2.5px 0 1px;
+    }
+    
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    }
+    
+    &:not([disabled]):active {
+      box-shadow: clr(accent,1) 0px 0px 0 0, clr(db,1) 0px 0px 0 1px;
+    }
+    
+}
+@mixin specialButtonType3(){
+    box-shadow: clr(accent,2) -4.5px 4.5px 0 0, clr(db,1) -4.5px 4.5px 0 1px;
+    
+    &:hover {
+      text-decoration: none;
+      box-shadow: clr(accent,2) -2.5px 2.5px 0 0, clr(db,1) -2.5px 2.5px 0 1px;
+    }
+    
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    }
+    
+    &:not([disabled]):active {
+      box-shadow: clr(accent,2) 0px 0px 0 0, clr(db,1) 0px 0px 0 1px;
+    }
+    
+}
+@mixin specialButtonType4(){
+    box-shadow: clr(accent,3) -4.5px 4.5px 0 0, clr(db,1) -4.5px 4.5px 0 1px;
+    
+    &:hover {
+      text-decoration: none;
+      box-shadow: clr(accent,3) -2.5px 2.5px 0 0, clr(db,1) -2.5px 2.5px 0 1px;
+    }
+    
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    }
+    
+    &:not([disabled]):active {
+      box-shadow: clr(accent,3) 0px 0px 0 0, clr(db,1) 0px 0px 0 1px;
+    }
+
+}
+        

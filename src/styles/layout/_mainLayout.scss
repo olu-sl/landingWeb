@@ -7,9 +7,11 @@
   overscroll-behavior: contain;
   // position: relative;
   overflow: hidden auto;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   @include components.navbar();
-  @include components.BottomNav();
+  // @include components.BottomNav();
 
+  .pages {
+    @include pages.homePage();
+  }
 }

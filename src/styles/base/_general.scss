@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: clr(light, 1);
+  margin: 0;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+}

@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 
-* {
+body {
+  background-color: hsla(0deg, 0%, 100%, 0.6);
   margin: 0;
-  padding: 0;
-  font: inherit;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
 }
 
 .clr-db-1 {
@@ -42,12 +42,20 @@
   background-color: hsla(227deg, 51%, 22%, 0.6);
 }
 
+.clr-db-4a {
+  color: hsla(227deg, 52%, 22%, 0.35);
+}
+
+.bg-db-4a {
+  background-color: hsla(227deg, 52%, 22%, 0.35);
+}
+
 .clr-light-3 {
-  color: hsla(0deg, 0%, 100%, 0.6);
+  color: hsl(0deg, 0%, 100%);
 }
 
 .bg-light-3 {
-  background-color: hsla(0deg, 0%, 100%, 0.6);
+  background-color: hsl(0deg, 0%, 100%);
 }
 
 .clr-light-2 {
@@ -59,11 +67,11 @@
 }
 
 .clr-light-1 {
-  color: hsl(0deg, 0%, 100%);
+  color: hsla(0deg, 0%, 100%, 0.6);
 }
 
 .bg-light-1 {
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsla(0deg, 0%, 100%, 0.6);
 }
 
 .clr-dark-1 {
@@ -132,6 +140,94 @@
 
 .mx-auto {
   margin-inline: auto;
+}
+
+.margin-2 {
+  margin: 0.125rem;
+}
+.margin-block-start-2 {
+  margin-block-start: 0.125rem;
+}
+.margin-block-end-2 {
+  margin-block-end: 0.125rem;
+}
+.margin-block-2 {
+  margin-block: 0.125rem;
+}
+.margin-inline-start-2 {
+  margin-inline-start: 0.125rem;
+}
+.margin-inline-end-2 {
+  margin-inline-end: 0.125rem;
+}
+.margin-inline-2 {
+  margin-inline: 0.125rem;
+}
+
+.padding-2 {
+  padding: 0.125rem;
+}
+.padding-block-start-2 {
+  padding-block-start: 0.125rem;
+}
+.padding-block-end-2 {
+  padding-block-end: 0.125rem;
+}
+.padding-block-2 {
+  padding-block: 0.125rem;
+}
+.padding-inline-start-2 {
+  padding-inline-start: 0.125rem;
+}
+.padding-inline-end-2 {
+  padding-inline-end: 0.125rem;
+}
+.padding-inline-2 {
+  padding-inline: 0.125rem;
+}
+
+.margin-4 {
+  margin: 0.25rem;
+}
+.margin-block-start-4 {
+  margin-block-start: 0.25rem;
+}
+.margin-block-end-4 {
+  margin-block-end: 0.25rem;
+}
+.margin-block-4 {
+  margin-block: 0.25rem;
+}
+.margin-inline-start-4 {
+  margin-inline-start: 0.25rem;
+}
+.margin-inline-end-4 {
+  margin-inline-end: 0.25rem;
+}
+.margin-inline-4 {
+  margin-inline: 0.25rem;
+}
+
+.padding-4 {
+  padding: 0.25rem;
+}
+.padding-block-start-4 {
+  padding-block-start: 0.25rem;
+}
+.padding-block-end-4 {
+  padding-block-end: 0.25rem;
+}
+.padding-block-4 {
+  padding-block: 0.25rem;
+}
+.padding-inline-start-4 {
+  padding-inline-start: 0.25rem;
+}
+.padding-inline-end-4 {
+  padding-inline-end: 0.25rem;
+}
+.padding-inline-4 {
+  padding-inline: 0.25rem;
 }
 
 .margin-8 {
@@ -485,4 +581,295 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--flex-gap, 1rem);
+}
+
+.rounded-sm {
+  border-radius: 5px;
+}
+
+.rounded-md {
+  border-radius: 8px;
+}
+
+.rounded-l {
+  border-radius: 10px;
+}
+
+.rounded-xl {
+  border-radius: 15px;
+}
+
+.rounded-xx {
+  border-radius: 50%;
+}
+
+.Layout {
+  background-color: transparent;
+  overscroll-behavior: contain;
+  overflow: hidden auto;
+  width: 100%;
+}
+.Layout nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: hsl(227deg, 51%, 22%);
+}
+.Layout nav .navbar {
+  max-width: 1500px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  min-height: 4.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Layout nav .navbar ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 1.6rem;
+}
+.Layout nav .navbar ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(227deg, 51%, 22%);
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+.Layout nav .navbar ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+.Layout nav .navbar ul li .line {
+  position: absolute;
+  width: 0%;
+  bottom: -5px;
+  left: 0;
+  height: 1.5px;
+  border-radius: 10px;
+  transition: 0.3s all ease;
+}
+.Layout nav .navbar ul li .lineActive {
+  width: 100%;
+  background-color: hsl(227deg, 36%, 29%);
+}
+.Layout nav .navbar ul li:hover .line {
+  width: 100%;
+  background-color: hsla(227deg, 51%, 22%, 0.6);
+}
+.Layout nav .navbar .cta {
+  flex-shrink: 0;
+}
+.Layout nav .navbar .cta .signUp {
+  appearance: button;
+  background-image: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 9px 30px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: 0.3s all ease;
+  border: 1px solid hsl(227deg, 51%, 22%);
+  background-color: hsl(227deg, 51%, 22%);
+  color: #fff;
+}
+.Layout nav .navbar .cta .signUp:hover, .Layout nav .navbar .cta .signUp:focus {
+  text-decoration: none;
+}
+.Layout nav .navbar .cta .signUp:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+.Layout nav .navbar .cta .signUp:not([disabled]):active {
+  transform: translate(-2px, 2px);
+}
+@media (min-width: 750px) {
+  .Layout nav .navbar .cta .signUp {
+    margin-left: 0.9rem;
+    padding: 10px 40px;
+  }
+}
+.Layout nav .navbar .cta .signUp-1 {
+  box-shadow: hsl(0deg, 0%, 100%) -4.5px 4.5px 0 0, hsl(227deg, 51%, 22%) -4.5px 4.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-1:hover {
+  text-decoration: none;
+  box-shadow: hsl(0deg, 0%, 100%) -2.5px 2.5px 0 0, hsl(227deg, 51%, 22%) -2.5px 2.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-1:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+}
+.Layout nav .navbar .cta .signUp-1:not([disabled]):active {
+  box-shadow: hsl(0deg, 0%, 100%) 0px 0px 0 0, hsl(227deg, 51%, 22%) 0px 0px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-2 {
+  box-shadow: hsl(165deg, 94%, 45%) -4.5px 4.5px 0 0, hsl(227deg, 51%, 22%) -4.5px 4.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-2:hover {
+  text-decoration: none;
+  box-shadow: hsl(165deg, 94%, 45%) -2.5px 2.5px 0 0, hsl(227deg, 51%, 22%) -2.5px 2.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-2:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+}
+.Layout nav .navbar .cta .signUp-2:not([disabled]):active {
+  box-shadow: hsl(165deg, 94%, 45%) 0px 0px 0 0, hsl(227deg, 51%, 22%) 0px 0px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-3 {
+  box-shadow: hsl(265deg, 98%, 79%) -4.5px 4.5px 0 0, hsl(227deg, 51%, 22%) -4.5px 4.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-3:hover {
+  text-decoration: none;
+  box-shadow: hsl(265deg, 98%, 79%) -2.5px 2.5px 0 0, hsl(227deg, 51%, 22%) -2.5px 2.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-3:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+}
+.Layout nav .navbar .cta .signUp-3:not([disabled]):active {
+  box-shadow: hsl(265deg, 98%, 79%) 0px 0px 0 0, hsl(227deg, 51%, 22%) 0px 0px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-4 {
+  box-shadow: hsl(210deg, 100%, 73%) -4.5px 4.5px 0 0, hsl(227deg, 51%, 22%) -4.5px 4.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-4:hover {
+  text-decoration: none;
+  box-shadow: hsl(210deg, 100%, 73%) -2.5px 2.5px 0 0, hsl(227deg, 51%, 22%) -2.5px 2.5px 0 1px;
+}
+.Layout nav .navbar .cta .signUp-4:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+}
+.Layout nav .navbar .cta .signUp-4:not([disabled]):active {
+  box-shadow: hsl(210deg, 100%, 73%) 0px 0px 0 0, hsl(227deg, 51%, 22%) 0px 0px 0 1px;
+}
+.Layout nav .navbar .cta .login {
+  background-color: transparent;
+  color: hsl(227deg, 51%, 22%);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s all ease;
+}
+.Layout .pages .homePage header {
+  width: 100%;
+  height: 50rem;
+  max-height: 80vh;
+  background-color: hsl(165deg, 94%, 45%);
+}
+.Layout .pages .homePage header .header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+  margin: auto;
+  justify-content: space-around;
+  max-width: 1600px;
+}
+.Layout .pages .homePage header .header .headerImage {
+  height: 90%;
+  width: auto;
+  flex-shrink: 0;
+}
+.Layout .pages .homePage header .header .info {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  color: hsl(227deg, 51%, 22%);
+  max-width: 800px;
+}
+.Layout .pages .homePage header .header .info .tagline {
+  font-size: clamp(2.3rem, 1.6471rem + 3.4824vw, 6rem);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.Layout .pages .homePage header .header .info .subTagline {
+  margin-top: 0.5rem;
+  font-size: clamp(1.1rem, 1.0143rem + 0.4571vw, 1.5rem);
+  line-height: 1.9rem;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  max-width: 800px;
+}
+.Layout .pages .homePage header .header .info .subTagline span {
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+.Layout .pages .homePage header .header .info .form {
+  width: 100%;
+  height: 3.4rem;
+  max-width: 600px;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  border: 2px solid hsl(227deg, 51%, 22%);
+  padding: 0.25em 0.5em;
+  box-shadow: hsl(227deg, 51%, 22%) 3px 4px 0px 0px, hsl(227deg, 51%, 22%) 2px 2px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .Layout .pages .homePage header .header .info .form {
+    padding: 0.25em 0.75em;
+  }
+}
+.Layout .pages .homePage header .header .info .form .input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: hsl(227deg, 36%, 29%);
+  font-size: 1.2rem;
+}
+.Layout .pages .homePage header .header .info .form .input::placeholder {
+  color: hsla(227deg, 52%, 22%, 0.35);
+}
+.Layout .pages .homePage header .header .info .form button {
+  margin-left: 10px;
+  flex-shrink: 0;
+  background-color: hsl(227deg, 51%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 4.5px;
+  border: none;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  column-gap: 10px;
+}
+.Layout .pages .homePage header .header .info .bottom {
+  margin-top: 1rem;
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+.Layout .pages .homePage header .header .info .bottom .bInfo {
+  display: flex;
+  column-gap: 5px;
+}
+@media screen and (max-width: 1500px) {
+  .Layout .pages .homePage header .header {
+    padding: 2rem 1rem 0 1rem;
+  }
 }
