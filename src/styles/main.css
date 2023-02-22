@@ -777,6 +777,35 @@ body {
   background-color: hsl(227deg, 51%, 22%);
   padding: 0 10px;
 }
+.Layout footer .top {
+  border: 1px solid red;
+  display: flex;
+}
+.Layout footer .top .side2 {
+  border: 1px solid yellow;
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+}
+.Layout footer .top .side2 .nav {
+  max-width: 400px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+.Layout footer .top .side2 .nav h1 {
+  color: hsl(0deg, 0%, 100%);
+}
+.Layout footer .top .side2 .nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+.Layout footer .top .side2 .nav ul li {
+  margin-bottom: 8px;
+  color: hsla(0deg, 0%, 100%, 0.8);
+}
 .Layout footer .bottom {
   width: 100%;
   margin: auto;
@@ -784,6 +813,7 @@ body {
   display: flex;
   max-width: 1600px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .Layout footer .bottom .socials {
   display: flex;
@@ -800,6 +830,7 @@ body {
   color: hsla(0deg, 0%, 100%, 0.8);
 }
 .Layout footer .bottom .misc {
+  max-width: 600px;
   display: flex;
   column-gap: 0.3rem;
   color: hsla(0deg, 0%, 100%, 0.6);
@@ -807,6 +838,14 @@ body {
 }
 .Layout footer .bottom .misc .Dot {
   background-color: hsla(0deg, 0%, 100%, 0.6);
+}
+@media screen and (max-width: 500px) {
+  .Layout footer .bottom .misc {
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
 }
 .Layout .pages .homePage header {
   width: 100%;

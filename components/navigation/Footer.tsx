@@ -3,11 +3,87 @@ import React from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { RiWhatsappFill } from "react-icons/ri";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import FooterNav, { FooterNavType } from "./FooterNav";
+const FooterLinks: FooterNavType[] = [
+  {
+    heading: `Company`,
+    links: [
+      {
+        Text: "Home",
+        href: `/`,
+      },
+      {
+        Text: "About",
+        href: `/About`,
+      },
+      {
+        Text: "Services",
+        href: `/Services`,
+      },
+    ],
+  },
+  {
+    heading: `Company`,
+    links: [
+      {
+        Text: "Home",
+        href: `/`,
+      },
+      {
+        Text: "About",
+        href: `/About`,
+      },
+      {
+        Text: "Services",
+        href: `/Services`,
+      },
+    ],
+  },
+  {
+    heading: `Company`,
+    links: [
+      {
+        Text: "Home",
+        href: `/`,
+      },
+      {
+        Text: "About",
+        href: `/About`,
+      },
+      {
+        Text: "Services",
+        href: `/Services`,
+      },
+    ],
+  },
+  {
+    heading: `Company`,
+    links: [
+      {
+        Text: "Home",
+        href: `/`,
+      },
+      {
+        Text: "About",
+        href: `/About`,
+      },
+      {
+        Text: "Services",
+        href: `/Services`,
+      },
+    ],
+  },
+];
 const Footer = () => {
   return (
     <footer>
       <section className="top">
         <div className="side1"></div>
+        <div className="side2">
+          {FooterLinks.map((FooterLink, i) => (
+            <FooterNav key={`footerNav_${i}`} {...FooterLink} />
+          ))}
+        </div>
       </section>
 
       <section className="bottom">
