@@ -6,11 +6,94 @@
     background-color: clr(db, 1);
     padding: 0 10px;
     .top {
-      border: 1px solid red;
       display: flex;
+      max-width: 1350px;
+      margin: auto;
 
+      .side1 {
+        width: 100%;
+        min-width: 500px;
+
+        .logo {
+          margin: 1rem 0 0.5rem 0;
+          width: 35px;
+          height: auto;
+        }
+
+        p {
+          color: clr(light, 3);
+        }
+
+        .form {
+          width: 100%;
+          height: 3.2rem;
+          min-width: 290px;
+          max-width: 380px;
+          border-radius: 5px;
+          font-family: "Open Sans", sans-serif;
+          font-size: 16px;
+          letter-spacing: 2px;
+          color: clr(light, 2);
+          background-color: clr(db, 1);
+          cursor: pointer;
+          border: 2px solid clr(light, 3);
+          padding: 0.25em 0.5em;
+          box-shadow: clr(light, 3) 3px 4px 0px 0px, clr(light, 3) 2px 2px 0px 0px;
+          position: relative;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          display: flex;
+          align-items: center;
+          @media (min-width: 768px) {
+            padding: 0.25em 0.75em;
+          }
+
+          .input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background-color: clr(db, 1);
+            color: clr(light, 2);
+            font-size: 1.05rem;
+            &::placeholder {
+              color: clr(light, 1);
+            }
+          }
+          button {
+            margin-left: 10px;
+            flex-shrink: 0;
+            color: clr(db, 1);
+            background-color: clr(light, 3);
+            border-radius: 4.5px;
+            border: none;
+            font-size: 1rem;
+            padding: 8px;
+            cursor: pointer;
+          }
+          @media screen and (max-width: 906px) {
+            max-width: 320px;
+            height: 3.05rem;
+          }
+          @media screen and (max-width: 580px) {
+            max-width: 305px;
+            box-shadow: clr(light, 3) 2px 3px 0px 0px, clr(light, 3) 1px 1px 0px 0px;
+          }
+          @media screen and (max-width: 350px) {
+            max-width: 280px;
+            height: 3rem;
+          }
+        }
+        @media screen and (max-width: 906px) {
+          width: fit-content;
+          min-width: 342px;
+        }
+        @media screen and (max-width: 520px) {
+          min-width: 300px;
+        }
+      }
       .side2 {
-        border: 1px solid yellow;
         width: 100%;
         max-width: 1300px;
         height: auto;
@@ -22,17 +105,39 @@
           min-width: 200px;
           flex-shrink: 0;
 
-          h1 {
+          h2 {
             color: clr(light, 3);
+
+            @media screen and (max-width: 500px) {
+              font-size: 1.1rem;
+            }
           }
           ul {
             list-style-type: none;
             padding: 0;
             li {
               margin-bottom: 8px;
-              color: clr(light, 2);
+              a {
+                color: clr(light, 2);
+                text-decoration: none;
+              }
+
+              @media screen and (max-width: 500px) {
+                font-size: 0.9rem;
+              }
             }
           }
+        }
+
+        @media screen and (max-width: 1356px) and (min-width: 959px) {
+          justify-content: space-around;
+        }
+      }
+
+      @media screen and (max-width: 792px) {
+        flex-wrap: wrap;
+        .side1 {
+          margin-bottom: 1rem;
         }
       }
     }
@@ -41,7 +146,8 @@
       margin: auto;
       background-color: transparent;
       display: flex;
-      max-width: 1600px;
+      max-width: 1350px;
+
       justify-content: space-between;
       flex-wrap: wrap;
       .socials {
@@ -57,6 +163,10 @@
             color: clr(light, 2);
           }
         }
+
+        @media screen and (max-width: 850px) {
+          font-size: 1.5rem;
+        }
       }
       .misc {
         max-width: 600px;
@@ -68,10 +178,13 @@
           background-color: clr(light, 1);
         }
 
+        @media screen and (max-width: 850px) {
+          font-size: 0.9rem;
+        }
         @media screen and (max-width: 500px) {
           width: 100%;
           flex-shrink: 0;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
           margin-top: 6px;
         }
       }

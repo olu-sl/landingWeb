@@ -778,11 +778,102 @@ body {
   padding: 0 10px;
 }
 .Layout footer .top {
-  border: 1px solid red;
   display: flex;
+  max-width: 1350px;
+  margin: auto;
+}
+.Layout footer .top .side1 {
+  width: 100%;
+  min-width: 500px;
+}
+.Layout footer .top .side1 .logo {
+  margin: 1rem 0 0.5rem 0;
+  width: 35px;
+  height: auto;
+}
+.Layout footer .top .side1 p {
+  color: hsl(0deg, 0%, 100%);
+}
+.Layout footer .top .side1 .form {
+  width: 100%;
+  height: 3.2rem;
+  min-width: 290px;
+  max-width: 380px;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: hsla(0deg, 0%, 100%, 0.8);
+  background-color: hsl(227deg, 51%, 22%);
+  cursor: pointer;
+  border: 2px solid hsl(0deg, 0%, 100%);
+  padding: 0.25em 0.5em;
+  box-shadow: hsl(0deg, 0%, 100%) 3px 4px 0px 0px, hsl(0deg, 0%, 100%) 2px 2px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .Layout footer .top .side1 .form {
+    padding: 0.25em 0.75em;
+  }
+}
+.Layout footer .top .side1 .form .input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: hsl(227deg, 51%, 22%);
+  color: hsla(0deg, 0%, 100%, 0.8);
+  font-size: 1.05rem;
+}
+.Layout footer .top .side1 .form .input::placeholder {
+  color: hsla(0deg, 0%, 100%, 0.6);
+}
+.Layout footer .top .side1 .form button {
+  margin-left: 10px;
+  flex-shrink: 0;
+  color: hsl(227deg, 51%, 22%);
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 4.5px;
+  border: none;
+  font-size: 1rem;
+  padding: 8px;
+  cursor: pointer;
+}
+@media screen and (max-width: 906px) {
+  .Layout footer .top .side1 .form {
+    max-width: 320px;
+    height: 3.05rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .Layout footer .top .side1 .form {
+    max-width: 305px;
+    box-shadow: hsl(0deg, 0%, 100%) 2px 3px 0px 0px, hsl(0deg, 0%, 100%) 1px 1px 0px 0px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .Layout footer .top .side1 .form {
+    max-width: 280px;
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 906px) {
+  .Layout footer .top .side1 {
+    width: fit-content;
+    min-width: 342px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .Layout footer .top .side1 {
+    min-width: 300px;
+  }
 }
 .Layout footer .top .side2 {
-  border: 1px solid yellow;
   width: 100%;
   max-width: 1300px;
   height: auto;
@@ -795,8 +886,13 @@ body {
   min-width: 200px;
   flex-shrink: 0;
 }
-.Layout footer .top .side2 .nav h1 {
+.Layout footer .top .side2 .nav h2 {
   color: hsl(0deg, 0%, 100%);
+}
+@media screen and (max-width: 500px) {
+  .Layout footer .top .side2 .nav h2 {
+    font-size: 1.1rem;
+  }
 }
 .Layout footer .top .side2 .nav ul {
   list-style-type: none;
@@ -804,14 +900,35 @@ body {
 }
 .Layout footer .top .side2 .nav ul li {
   margin-bottom: 8px;
+}
+.Layout footer .top .side2 .nav ul li a {
   color: hsla(0deg, 0%, 100%, 0.8);
+  text-decoration: none;
+}
+@media screen and (max-width: 500px) {
+  .Layout footer .top .side2 .nav ul li {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 1356px) and (min-width: 959px) {
+  .Layout footer .top .side2 {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 792px) {
+  .Layout footer .top {
+    flex-wrap: wrap;
+  }
+  .Layout footer .top .side1 {
+    margin-bottom: 1rem;
+  }
 }
 .Layout footer .bottom {
   width: 100%;
   margin: auto;
   background-color: transparent;
   display: flex;
-  max-width: 1600px;
+  max-width: 1350px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -829,6 +946,11 @@ body {
 .Layout footer .bottom .socials .icon:hover {
   color: hsla(0deg, 0%, 100%, 0.8);
 }
+@media screen and (max-width: 850px) {
+  .Layout footer .bottom .socials {
+    font-size: 1.5rem;
+  }
+}
 .Layout footer .bottom .misc {
   max-width: 600px;
   display: flex;
@@ -839,11 +961,16 @@ body {
 .Layout footer .bottom .misc .Dot {
   background-color: hsla(0deg, 0%, 100%, 0.6);
 }
+@media screen and (max-width: 850px) {
+  .Layout footer .bottom .misc {
+    font-size: 0.9rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .Layout footer .bottom .misc {
     width: 100%;
     flex-shrink: 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-top: 6px;
   }
 }
@@ -852,6 +979,7 @@ body {
   height: 50rem;
   max-height: 80vh;
   background-color: hsl(165deg, 94%, 45%);
+  overflow: hidden;
 }
 .Layout .pages .homePage header .header {
   width: 100%;
