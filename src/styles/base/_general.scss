@@ -5,7 +5,10 @@
 *::after {
   box-sizing: border-box;
 }
-
+html{
+  overscroll-behavior: none;
+  overflow: scroll;
+}
 body {
   background-color: clr(light, 1);
   margin: 0;

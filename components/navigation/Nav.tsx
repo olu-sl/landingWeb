@@ -1,12 +1,27 @@
+import { useSidebar } from "Provider/Sidebarprov";
+import { NavCta } from "components/cta";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-
+import { IoClose, IoMenu } from "react-icons/io5";
 const Nav = () => {
   const route = useRouter().pathname.toLowerCase();
   const [activePage, setActivePage] = useState<string | null>(null);
+  const { toggleSidebar, sidebarState } = useSidebar();
+  const router = useRouter();
+  useEffect(() => {
+    //@ts-ignore
+    const handleRouteChange = (url) => {
+      toggleSidebar(false);
+    };
 
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
   const BgColor = () => {
     if (route === "/") {
       return {
@@ -15,21 +30,15 @@ const Nav = () => {
     }
     if (route.includes("about")) {
       return {
-        backgroundColor: "#07dfa9",
+        backgroundColor: "#75baff",
       };
     }
     return {
-      backgroundColor: "#75baff",
+      backgroundColor: "#fff",
     };
-  };
-  const SignUpButtonType = () => {
-    if (route === "/") return "signUp-2";
-    if (route.includes("about")) return "signUp-2";
-    return "signUp-4";
   };
 
   useEffect(() => {
-    console.log(route);
     if (route === "/") {
       setActivePage("home");
       return;
@@ -48,33 +57,46 @@ const Nav = () => {
     }
     setActivePage(null);
   }, [route]);
+
   return (
     <nav style={BgColor()}>
       <div className="navbar">
         <Image src={`/logo.png`} width={50} height={50} alt="logo" />
         {/* <div className="main"> */}
-        <ul className={`navs navclose`}>
-          <li>
-            <Link href={`/`}>Home</Link>
-            <span className={`line ${activePage === "home" ? `lineActive` : ``}`}></span>
-          </li>
-
-          <li>
-            <Link href={`/Services`}>Services</Link>
-            <span className={`line ${activePage === "services" ? `lineActive` : ``}`}></span>
-          </li>
-          <li>
-            <Link href={`/About`}>About</Link>
-            <span className={`line ${activePage === "about" ? `lineActive` : ``}`}></span>
-          </li>
-          <li>
-            <Link href={`/Contact`}>Contact Us</Link>
-            <span className={`line ${activePage === "contact" ? `lineActive` : ``}`}></span>
-          </li>
+        <ul className={sidebarState ? `close` : ``}>
+          <Link href={`/`}>
+            <li>
+              Home
+              <span className={`line ${activePage === "home" ? `lineActive` : ``}`}></span>
+            </li>
+          </Link>
+          <Link href={`/Services`}>
+            <li>
+              Services
+              <span className={`line ${activePage === "services" ? `lineActive` : ``}`}></span>
+            </li>
+          </Link>
+          <Link href={`/About`}>
+            <li>
+              About
+              <span className={`line ${activePage === "about" ? `lineActive` : ``}`}></span>
+            </li>
+          </Link>
+          <Link href={`/Contact`}>
+            <li>
+              Contact Us
+              <span className={`line ${activePage === "contact" ? `lineActive` : ``}`}></span>
+            </li>
+          </Link>
+          <NavCta />
         </ul>
-        <div className="cta">
-          <button className="login">Login</button>
-          <button className={`signUp ${SignUpButtonType()}`}>Create Account</button>
+        <NavCta />
+        <div className="hamburger">
+          {sidebarState ? (
+            <IoClose className="icon" onClick={() => toggleSidebar(false)} />
+          ) : (
+            <IoMenu className="icon" onClick={() => toggleSidebar(true)} />
+          )}
         </div>
       </div>
       {/* </div> */}

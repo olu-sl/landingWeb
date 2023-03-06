@@ -10,8 +10,28 @@
   width: 100%;
   @include components.navbar();
   @include components.Footer();
+  
 
+  .overlay {
+    background-color: #00000094;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    display: block;
+
+    @media screen and (min-width:741px) {
+      display: none;
+      background-color: transparent;
+    }
+  }
+  .overlayHidden {
+    display: none;
+    background-color: transparent;
+  }
   .pages {
+    margin-top: 4rem;
     @include pages.homePage();
   }
 }

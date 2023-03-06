@@ -3,63 +3,31 @@
 @mixin navbar() {
   nav {
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: clr(db, 1);
+    z-index: 100;
     .navbar {
+      // padding-top: 6px;
       max-width: 1500px;
       margin: auto;
       width: 100%;
-      height: auto;
-      min-height: 4.1rem;
+      height: 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      overflow: hidden;
+      background-color: inherit;
 
-      ul {
-        list-style-type: none;
-        display: flex;
-        column-gap: 1.6rem;
-        li {
-          font-size: 1rem;
-          font-weight: 500;
-          color: clr(db, 1);
-          font-weight: 500;
-          position: relative;
-          cursor: pointer;
-          a {
-            color: inherit;
-            text-decoration: none;
-          }
-          .line {
-            position: absolute;
-            width: 0%;
-            bottom: -5px;
-            left: 0;
-            height: 1.5px;
-            border-radius: 10px;
-            transition: 0.3s all ease;
-          }
-          .lineActive {
-            width: 100%;
-            background-color: clr(db, 2);
-          }
-          &:hover {
-            .line {
-              width: 100%;
-              background-color: clr(db, 4);
-            }
-          }
-        }
-      }
       .cta {
+        display: none;
+        visibility: hidden;
         flex-shrink: 0;
         .signUp {
           @include button.specialButton();
           border: 1px solid clr(db, 1);
           background-color: clr(db, 1);
           color: #fff;
-          
+
           @media (min-width: 750px) {
             margin-left: 0.9rem;
             padding: 10px 40px;
@@ -85,6 +53,129 @@
           font-size: 1rem;
           font-weight: 500;
           transition: 0.3s all ease;
+        }
+
+        @media (min-width: 740px) {
+          display: block;
+          visibility: visible;
+        }
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        column-gap: 1.6rem;
+        a {
+          color: inherit;
+          text-decoration: none;
+
+          li {
+            font-size: 1rem;
+            font-weight: 500;
+            color: clr(db, 1);
+            font-weight: 500;
+            position: relative;
+            cursor: pointer;
+            .line {
+              position: absolute;
+              width: 0%;
+              bottom: -5px;
+              left: 0;
+              height: 1.5px;
+              border-radius: 10px;
+              transition: 0.3s all ease;
+            }
+            .lineActive {
+              width: 100%;
+              background-color: clr(db, 2);
+            }
+            &:hover {
+              .line {
+                width: 100%;
+                background-color: clr(db, 4);
+              }
+            }
+          }
+        }
+        @media (min-width: 741px) {
+          .cta {
+            display: none;
+            visibility: hidden;
+          }
+        }
+        @media (max-width: 740px) {
+          border-top: 1px solid clr(db, 1);
+          position: absolute;
+          top: 4rem;
+          right: 0;
+          padding: 10px;
+          width: 90%;
+          margin: 0;
+          transition: 0.3s all ease;
+          transform: translateX(100%);
+          background-color: inherit;
+          height: calc(100vh - 4rem);
+          flex-direction: column;
+
+          li {
+            height: 2.2rem;
+            margin-bottom: 2.5rem;
+
+            .line {
+              &:hover {
+                max-width: 400px;
+              }
+            }
+            .lineActive {
+              width: 95%;
+              max-width: 350px;
+            }
+          }
+          .cta {
+            visibility: visible;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+
+            .login {
+              margin-bottom: 1rem;
+              border: 1px solid clr(db, 1);
+              border-radius: 4px;
+              padding: 9px 27px;
+              touch-action: manipulation;
+
+              &:hover {
+                &:active {
+                  background-color: clr(db, 1);
+                  color: clr(light, 3);
+                }
+              }
+            }
+            button {
+              width: 100%;
+              margin: 0 1%;
+              max-width: 360px;
+              height: 3.2rem;
+            }
+          }
+        }
+      }
+      .close {
+        @media (max-width: 740px) {
+          transform: translateX(0%);
+        }
+      }
+
+      .hamburger {
+        height: 90%;
+        display: flex;
+        align-items: center;
+        .icon {
+          font-size: 2rem;
+          color: clr(db, 1);
+        }
+
+        @media screen and (min-width: 741px) {
+          display: none;
         }
       }
     }
