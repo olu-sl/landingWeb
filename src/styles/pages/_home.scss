@@ -3,5 +3,6 @@
 @mixin homePage() {
   .homePage {
     @include components.Header1();
+    @include components.Body1();
   }
 }

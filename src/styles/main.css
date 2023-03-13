@@ -6,7 +6,7 @@
 
 html {
   overscroll-behavior: none;
-  overflow: scroll;
+  overflow: auto;
 }
 
 body {
@@ -627,6 +627,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 100;
+  padding: 0 4%;
 }
 .Layout nav .navbar {
   max-width: 1500px;
@@ -877,7 +878,7 @@ body {
 }
 .Layout footer .top .side1 .logo {
   margin: 1rem 0 0.5rem 0;
-  width: 35px;
+  min-width: 35px;
   height: auto;
 }
 .Layout footer .top .side1 p {
@@ -1264,5 +1265,126 @@ body {
   .Layout .pages .homePage header {
     max-height: none;
     height: auto;
+  }
+}
+.Layout .pages .homePage .body1 {
+  background-color: hsl(0, 0%, 100%);
+  padding: 4% 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.Layout .pages .homePage .body1 .mainInfo {
+  width: 100%;
+  max-width: 600px;
+  color: hsl(227, 36%, 29%);
+}
+.Layout .pages .homePage .body1 .mainInfo h2 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 500px) {
+  .Layout .pages .homePage .body1 .mainInfo h2 {
+    font-size: 2rem;
+  }
+}
+.Layout .pages .homePage .body1 .mainInfo h4 {
+  padding: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .Layout .pages .homePage .body1 .mainInfo h4 {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+}
+.Layout .pages .homePage .body1 .mainInfo ul {
+  padding: 0%;
+  list-style-type: none;
+}
+.Layout .pages .homePage .body1 .mainInfo ul li {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.Layout .pages .homePage .body1 .mainInfo ul li p {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 500px) {
+  .Layout .pages .homePage .body1 .mainInfo ul li p {
+    font-size: 0.95rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .Layout .pages .homePage .body1 .mainInfo {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .Layout .pages .homePage .body1 .mainInfo {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .Layout .pages .homePage .body1 .mainInfo {
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .Layout .pages .homePage .body1 .mainInfo {
+    max-width: none;
+    padding: 0 10px;
+    width: 100%;
+  }
+}
+.Layout .pages .homePage .body1 .imageCont {
+  flex-shrink: 0;
+  background-color: hsl(265, 98%, 79%);
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+  max-height: 40rem;
+  max-width: 600px;
+  min-width: 450px;
+  overflow: hidden;
+  border: 3px solid hsl(227, 51%, 22%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Layout .pages .homePage .body1 .imageCont .image {
+  margin: 5%;
+  width: 95%;
+  height: auto;
+  object-fit: cover;
+}
+@media screen and (max-width: 1500px) {
+  .Layout .pages .homePage .body1 .imageCont {
+    max-width: 490px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .Layout .pages .homePage .body1 .imageCont {
+    min-width: 350px;
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .Layout .pages .homePage .body1 .imageCont {
+    min-width: 350px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .Layout .pages .homePage .body1 .imageCont {
+    min-width: auto;
+    max-width: 450px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .Layout .pages .homePage .body1 .imageCont {
+    max-width: 350px;
   }
 }

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <section className="top">
         <div className="side1">
-          <Image src={`/logoLight.png`} width={100} height={100} className="logo" alt="logo" />
+          <Image src={`/logo/logoMiniLight.png`} width={90} height={40} className="logo" alt="logo" />
 
           <p>Keep updated. Join our newsletter.</p>
 

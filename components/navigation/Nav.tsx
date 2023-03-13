@@ -61,7 +61,7 @@ const Nav = () => {
   return (
     <nav style={BgColor()}>
       <div className="navbar">
-        <Image src={`/logo.png`} width={50} height={50} alt="logo" />
+        <Image src={`/logo/logoMiniDarkFull.png`} width={100} height={45} alt="logo" />
         {/* <div className="main"> */}
         <ul className={sidebarState ? `close` : ``}>
           <Link href={`/`}>
